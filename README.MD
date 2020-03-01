@@ -6,4 +6,5 @@ Containerized Hadoop and Hive cluster in a single machine.
 
 
 #Usage
+
 `docker-compose up`
