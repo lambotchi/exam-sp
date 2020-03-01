@@ -2,12 +2,12 @@
 
 Containerized Hadoop and Hive cluster in a single machine.
 
-#Usage
+# Usage
 
 `docker-compose up`
 
 `make wordcount`
 
-#Reference
+# Reference
 
 https://github.com/big-data-europe/docker-hadoop
