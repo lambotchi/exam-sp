@@ -56,7 +56,7 @@ services:
       - ./hadoop-hive.env
 
   hive-server:
-    image: bde2020/hive:2.3.2-postgresql-metastore
+    image: legnoban/hive:2.3.2-postgresql-metastore
     env_file:
       - ./hadoop-hive.env
     environment:
@@ -66,7 +66,7 @@ services:
       - "10000:10000"
 
   hive-metastore:
-    image: bde2020/hive:2.3.2-postgresql-metastore
+    image: legnoban/hive:2.3.2-postgresql-metastore
     env_file:
       - ./hadoop-hive.env
     command: /opt/hive/bin/hive --service metastore
