@@ -1,4 +1,4 @@
-DOCKER_NETWORK = docker-hadoop_default
+DOCKER_NETWORK = exam-sp_default
 ENV_FILE = hadoop-hive.env
 current_branch := $(shell git rev-parse --abbrev-ref HEAD)
 wordcount:
