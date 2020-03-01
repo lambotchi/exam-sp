@@ -2,7 +2,7 @@ version: "3"
 
 services:
   namenode:
-    image: legnoban/hadoop-namenode:2.0.0-hadoop3.1.3-java8
+    image: legnoban/hadoop-namenode:3.1.3-java8
     container_name: namenode
     restart: always
     ports:
@@ -16,7 +16,7 @@ services:
       - ./hadoop-hive.env
 
   datanode:
-    image: legnoban/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    image: legnoban/hadoop-datanode:3.2.1-java8
     container_name: datanode
     restart: always
     volumes:
@@ -27,7 +27,7 @@ services:
       - ./hadoop-hive.env
 
   resourcemanager:
-    image: legnoban/hadoop-resourcemanager:2.0.0-hadoop3.2.1-java8
+    image: legnoban/hadoop-resourcemanager:3.2.1-java8
     container_name: resourcemanager
     restart: always
     environment:
@@ -36,7 +36,7 @@ services:
       - ./hadoop-hive.env
 
   nodemanager1:
-    image: legnoban/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8
+    image: legnoban/hadoop-nodemanager:3.2.1-java8
     container_name: nodemanager
     restart: always
     environment:
@@ -45,7 +45,7 @@ services:
       - ./hadoop-hive.env
 
   historyserver:
-    image: legnoban/hadoop-historyserver:2.0.0-hadoop3.2.1-java8
+    image: legnoban/hadoop-historyserver:3.2.1-java8
     container_name: historyserver
     restart: always
     environment:
@@ -56,7 +56,7 @@ services:
       - ./hadoop-hive.env
 
   hive-server:
-    image: legnoban/hive:2.3.2-postgresql-metastore
+    image: legnoban/hive-postgresql-metastore:3.1.2
     env_file:
       - ./hadoop-hive.env
     environment:
@@ -66,7 +66,7 @@ services:
       - "10000:10000"
 
   hive-metastore:
-    image: legnoban/hive:2.3.2-postgresql-metastore
+    image: legnoban/postgresql-metastore:3.1.2
     env_file:
       - ./hadoop-hive.env
     command: /opt/hive/bin/hive --service metastore
