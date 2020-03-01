@@ -45,7 +45,7 @@ services:
       - ./hadoop.env
 
   historyserver:
-    image: legnoban/hadoop-historyserver:2.0.0-hadoop3.2.1-java8
+    image: c
     container_name: historyserver
     restart: always
     environment:
