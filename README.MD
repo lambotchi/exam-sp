@@ -56,8 +56,6 @@ docker stack deploy -c docker-compose.yml --with-registry-auth hadoop
 docker service ls (after some time)
 ```
 
-
-
 ## Populate
 
 `make wordcount`
@@ -65,3 +63,6 @@ docker service ls (after some time)
 # Reference
 
 https://github.com/big-data-europe/docker-hadoop
+
+# Test Environment
+- OSX 10.14.6
