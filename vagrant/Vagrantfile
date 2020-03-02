@@ -1,0 +1,37 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+# Sample Vagranfile to setup Learning Environment
+# for Ansible Playbook Essentials
+
+VAGRANTFILE_API_VERSION = "2"
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "bento/centos-7.7"
+  config.ssh.insert_key = false
+  config.vm.provider :virtualbox do |v|
+  end
+
+  config.vm.provider :virtualbox do |vb|
+    vb.gui = false
+  end
+
+  config.vm.define "node1" do |node1|
+    node1.vm.network :private_network, ip: "192.168.2.11"
+    node1.vm.network :forwarded_port, guest: 22, host: 2231, id: 'ssh'
+
+    node1.vm.provider :virtualbox do |vb|
+      vb.cpus = 1
+      vb.memory = 4096
+    end
+  end
+
+  config.vm.define "node2" do |node2|
+    node2.vm.network :private_network, ip: "192.168.2.12"
+    node2.vm.network :forwarded_port, guest: 22, host: 2232, id: 'ssh'
+
+    node2.vm.provider :virtualbox do |vb|
+      vb.cpus = 1
+      vb.memory = 4096
+    end
+  end
+
+end
