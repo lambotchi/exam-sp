@@ -17,6 +17,7 @@ Containerized Hadoop and Hive cluster in a single machine.
 
 Up the vagrant nodes
 ```shell script
+git clone https://github.com/lambotchi/exam-sp.git
 cd vagrant
 vagrant up
 ````
@@ -52,6 +53,7 @@ docker swarm join --token XXXXX 192.168.2.11:2377
 
 (on node1 terminal)
 ```shell script
+git clone https://github.com/lambotchi/exam-sp.git
 docker stack deploy -c docker-compose.yml --with-registry-auth hadoop
 docker service ls (after some time)
 ```
